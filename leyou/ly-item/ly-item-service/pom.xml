@@ -5,9 +5,10 @@
     <parent>
         <artifactId>ly-item</artifactId>
         <groupId>com.leyou.item</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0-SNAPSHOT</version>
 
     <artifactId>ly-item-service</artifactId>
 
@@ -48,8 +49,8 @@
         </dependency>
         <dependency>
             <groupId>com.leyou.item</groupId>
-            <artifactId>ly-item-interface</artifactId>
-            <version>${leyou.latest.version}</version>
+            <artifactId>ly-item-interface2</artifactId>
+            <version>${leyou.latest3.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

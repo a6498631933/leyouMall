@@ -6,27 +6,37 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ly-registry" />
+        <module name="untitled2" />
         <module name="ly-gateway" />
         <module name="leyou-test" />
-        <module name="ly-item-interface" />
-        <module name="ly-item-service" />
+        <module name="ly-item-interface2" />
         <module name="leyou-common" />
+        <module name="ly-item-service" />
+        <module name="ly-registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="leyou-item-interface2" target="1.8" />
       <module name="ly-item-interface" target="1.8" />
+      <module name="untitled" target="1.8" />
+      <module name="untitled1" target="1.8" />
+      <module name="untitled2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="leyou-common" options="-parameters" />
+      <module name="leyou-item-interface2" options="-parameters" />
       <module name="leyou-test" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
       <module name="ly-item" options="-parameters" />
       <module name="ly-item-interface" options="-parameters" />
+      <module name="ly-item-interface2" options="-parameters" />
       <module name="ly-item-service" options="-parameters" />
       <module name="ly-registry" options="-parameters" />
+      <module name="untitled" options="-parameters" />
+      <module name="untitled1" options="-parameters" />
+      <module name="untitled2" options="-parameters" />
     </option>
   </component>
 </project>
