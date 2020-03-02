@@ -9,12 +9,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/ly-item-interface/pom.xml" />
+<!--        <option value="$PROJECT_DIR$/ly-item-interface/pom.xml" />
         <option value="$PROJECT_DIR$/ly-item/leyou-item-interface2/pom.xml" />
-        <option value="$PROJECT_DIR$/ly-item/ly-item-interface/pom.xml" />
-        <option value="$PROJECT_DIR$/ly-item/untitled/pom.xml" />
-        <option value="$PROJECT_DIR$/ly-item/untitled1/pom.xml" />
-        <option value="$PROJECT_DIR$/ly-item/untitled2/pom.xml" />
+        <option value="$PROJECT_DIR$/ly-item/ly-item-interface/pom.xml" />-->
       </set>
     </option>
   </component>
