@@ -49,7 +49,7 @@
         <!--对话框的内容，表单-->
         <v-card-text class="px-5">
 <!--          <my-brand-form :oldBrand="brand" :isEdit="isEdit" @close="show = false" :reload="getDataFromApi"/>-->
-          <my-brand-form :oldBrand="brand" @close="show = false"/>
+          <my-brand-form :oldBrand="brand" @close="closeWindow"/>
 <!--          <my-brand-form :oldBrand="brand" :isEdit="isEdit" @close="show = false" :reload="getDataFromApi"/>-->
         </v-card-text>
       </v-card>
@@ -90,6 +90,8 @@
       closeWindow(){
         // 关闭窗口
         this.show = false;
+        // 重新加载数据
+        this.getDataFromServer();
       },
       getDataFromServer(){ // 从服务的加载数据的方法。
         // 发起请求
