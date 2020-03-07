@@ -13,3 +13,5 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/** #路由到商品为服务
+  ignored-services:
+    - upload-service # 忽略upload-service服务

@@ -17,4 +17,8 @@ public class CategoryService {
         category.setParentId(pid);
         return this.categoryMapper.select(category);
     }
+
+    public List<Category> queryByBrandId(Long bid) {
+        return this.categoryMapper.queryByBrandId(bid);
+    }
 }
