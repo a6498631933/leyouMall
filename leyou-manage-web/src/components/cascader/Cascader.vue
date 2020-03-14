@@ -145,9 +145,7 @@
       }
     },
     created() {
-      console.log("haha");
       this.loadData(0).then(data => {
-        console.log(data);
         this.options = data;
       })
       if(this.required){

@@ -3,18 +3,17 @@ package com.leyou.itemService.service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.leyou.item.pojo.Brand;
-import com.leyou.item.pojo.Spu;
-import com.leyou.item.pojo.SpuBo;
-import com.leyou.itemService.mapper.BrandMapper;
-import com.leyou.itemService.mapper.SpuMapper;
+import com.leyou.item.pojo.*;
+import com.leyou.itemService.mapper.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +28,15 @@ public class GoodsService {
 
     @Autowired
     private BrandMapper brandMapper;
+
+    @Autowired
+    private SpuDetailMapper spuDetailMapper;
+
+    @Autowired
+    private StockMapper stockMapper;
+
+    @Autowired
+    private SkuMapper skuMapper;
 
     public PageInfo<SpuBo> querySpuByPageAndSort(Integer page, Integer rows, String key) {
 
@@ -73,5 +81,58 @@ public class GoodsService {
         PageInfo<SpuBo> ret = new PageInfo<>(list);
         ret.setTotal(tempInfo.getTotal());
         return ret;
+    }
+
+    @Transactional
+    public void save(SpuBo spu) {
+        // 保存spu
+        spu.setSaleable(true);
+        spu.setValid(true);
+        spu.setCreateTime(new Date());
+        spu.setLastUpdateTime(spu.getCreateTime());
+        this.spuMapper.insert(spu);
+        // 保存spu详情
+        spu.getSpuDetail().setSpuId(spu.getId());
+        this.spuDetailMapper.insert(spu.getSpuDetail());
+
+        // 保存sku和库存信息
+        saveSkuAndStock(spu.getSkus(), spu.getId());
+    }
+
+    private void saveSkuAndStock(List<Sku> skus, Long spuId) {
+        for (Sku sku : skus) {
+            if (!sku.getEnable()) {
+                continue;
+            }
+            // 保存sku
+            sku.setSpuId(spuId);
+            // 默认不参与任何促销
+            sku.setCreateTime(new Date());
+            sku.setLastUpdateTime(sku.getCreateTime());
+            this.skuMapper.insert(sku);
+
+            // 保存库存信息
+            Stock stock = new Stock();
+            stock.setSkuId(sku.getId());
+            stock.setStock(Integer.parseInt(sku.getStock().toString()));
+            this.stockMapper.insert(stock);
+        }
+    }
+
+    public SpuDetail querySpuDetailById(Long id) {
+        return spuDetailMapper.selectByPrimaryKey(id);
+    }
+
+    public List<Sku> querySkuBySpuId(Long id) {
+        // 查询sku
+        Sku record = new Sku();
+        record.setSpuId(id);
+        List<Sku> skus = this.skuMapper.select(record);
+        for (Sku sku : skus) {
+            // 同时查询出库存
+            Integer stock = this.stockMapper.selectByPrimaryKey(sku.getId()).getStock();
+            sku.setStock(stock.longValue());
+        }
+        return skus;
     }
 }
