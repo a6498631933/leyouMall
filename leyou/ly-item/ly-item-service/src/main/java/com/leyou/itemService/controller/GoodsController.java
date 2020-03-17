@@ -1,9 +1,9 @@
 package com.leyou.itemService.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.leyou.common.pojo.PageResult;
 import com.leyou.item.pojo.Sku;
-import com.leyou.item.pojo.Spu;
-import com.leyou.item.pojo.SpuBo;
+import com.leyou.item.bo.SpuBo;
 import com.leyou.item.pojo.SpuDetail;
 import com.leyou.itemService.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +27,13 @@ public class GoodsController {
      * @return
      */
     @GetMapping("/spu/page")
-    public ResponseEntity<PageInfo<SpuBo>> querySpuByPage(
+    public ResponseEntity<PageResult<SpuBo>> querySpuByPage(
             @RequestParam(value = "page", defaultValue = "1") Integer page,
             @RequestParam(value = "rows", defaultValue = "5") Integer rows,
             @RequestParam(value = "key", required = false) String key) {
         // 分页查询spu信息
-        PageInfo<SpuBo> result = this.goodsService.querySpuByPageAndSort(page, rows, key);
-        if (result == null || result.getSize() == 0) {
+        PageResult<SpuBo> result = this.goodsService.querySpuByPageAndSort(page, rows, key);
+        if (result == null || result.getTotal() == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(result);

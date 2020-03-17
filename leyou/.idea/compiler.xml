@@ -7,14 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="untitled2" />
-        <module name="ly-item-service" />
+        <module name="ly-registry" />
+        <module name="leyou-search" />
+        <module name="ly-upload" />
         <module name="ly-gateway" />
         <module name="leyou-test" />
         <module name="ly-item-interface2" />
-        <module name="leyou-common" />
         <module name="untitled" />
-        <module name="ly-upload" />
-        <module name="ly-registry" />
+        <module name="ly-item-service" />
+        <module name="leyou-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="leyou-common" options="-parameters" />
       <module name="leyou-item-interface2" options="-parameters" />
+      <module name="leyou-search" options="-parameters" />
       <module name="leyou-test" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
       <module name="ly-item" options="-parameters" />

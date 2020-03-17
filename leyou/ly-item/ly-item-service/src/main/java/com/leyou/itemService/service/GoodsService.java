@@ -3,6 +3,8 @@ package com.leyou.itemService.service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.leyou.common.pojo.PageResult;
+import com.leyou.item.bo.SpuBo;
 import com.leyou.item.pojo.*;
 import com.leyou.itemService.mapper.*;
 import org.apache.commons.lang.StringUtils;
@@ -38,7 +40,7 @@ public class GoodsService {
     @Autowired
     private SkuMapper skuMapper;
 
-    public PageInfo<SpuBo> querySpuByPageAndSort(Integer page, Integer rows, String key) {
+    public PageResult<SpuBo> querySpuByPageAndSort(Integer page, Integer rows, String key) {
 
         // 1、查询SPU
         // 分页,最多允许查100条
@@ -77,10 +79,10 @@ public class GoodsService {
 
         }).collect(Collectors.toList());
 
-        PageInfo<Spu> tempInfo = new PageInfo<>(pageInfo);
-        PageInfo<SpuBo> ret = new PageInfo<>(list);
-        ret.setTotal(tempInfo.getTotal());
-        return ret;
+//        PageInfo<Spu> tempInfo = new PageInfo<>(pageInfo);
+//        PageInfo<SpuBo> ret = new PageInfo<>(list);
+//        ret.setTotal(tempInfo.getTotal());
+        return new PageResult<>(pageInfo.getTotal() ,list);
     }
 
     @Transactional

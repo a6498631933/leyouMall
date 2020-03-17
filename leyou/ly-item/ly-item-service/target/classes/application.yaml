@@ -3,7 +3,6 @@ server:
 spring:
   application:
     name: item-service
-
   datasource:
     url: jdbc:mysql:///leyou
     username: root
@@ -11,7 +10,6 @@ spring:
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
-
 eureka:
   client:
     service-url:

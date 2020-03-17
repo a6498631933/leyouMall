@@ -1,5 +1,9 @@
-package com.leyou.item.pojo;
+package com.leyou.item.bo;
 
+
+import com.leyou.item.pojo.Sku;
+import com.leyou.item.pojo.Spu;
+import com.leyou.item.pojo.SpuDetail;
 
 import javax.persistence.Transient;
 import java.util.List;
