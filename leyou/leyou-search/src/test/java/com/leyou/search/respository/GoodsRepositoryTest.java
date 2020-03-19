@@ -4,6 +4,7 @@ import com.leyou.common.pojo.PageResult;
 import com.leyou.item.bo.SpuBo;
 import com.leyou.search.LySearchService;
 import com.leyou.search.client.GoodsClient;
+import com.leyou.search.client.SpecificationClient;
 import com.leyou.search.client.SpuClient;
 import com.leyou.search.pojo.Goods;
 import com.leyou.search.service.SearchService;
@@ -22,6 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -101,5 +103,11 @@ public class GoodsRepositoryTest {
     }
 
 
+    @Autowired
+    SpecificationClient specificationClient;
 
+    @Test
+    public void testJson(){
+
+    }
 }

@@ -13,6 +13,8 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/** #路由到商品为服务
-    serach-service: /search/**
+    search-service: /search/**
   ignored-services:
-    - upload-service # 忽略upload-service服务
+    -upload-service # 忽略upload-service服务
+
+
