@@ -2,6 +2,8 @@ package com.leyou.search.pojo;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import java.util.Map;
+
 public class SearchRequest {
     private String key;
 
@@ -10,6 +12,8 @@ public class SearchRequest {
     private String sortBy;
 
     private Boolean descending;
+
+    private Map<String, String> filter;
 
     private static final Integer DEFAULT_SIZE = 20;
     private static final Integer DEFAULT_PAGE = 1;
@@ -55,5 +59,13 @@ public class SearchRequest {
 
     public void setDescending(Boolean descending) {
         this.descending = descending;
+    }
+
+    public Map<String, String> getFilter() {
+        return filter;
+    }
+
+    public void setFilter(Map<String, String> filter) {
+        this.filter = filter;
     }
 }
