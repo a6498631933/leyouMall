@@ -13,6 +13,7 @@
         <module name="ly-gateway" />
         <module name="leyou-test" />
         <module name="ly-item-interface2" />
+        <module name="ly-goods-web" />
         <module name="untitled" />
         <module name="ly-item-service" />
         <module name="leyou-common" />
@@ -33,6 +34,7 @@
       <module name="leyou-search" options="-parameters" />
       <module name="leyou-test" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
+      <module name="ly-goods-web" options="-parameters" />
       <module name="ly-item" options="-parameters" />
       <module name="ly-item-interface" options="-parameters" />
       <module name="ly-item-interface2" options="-parameters" />
