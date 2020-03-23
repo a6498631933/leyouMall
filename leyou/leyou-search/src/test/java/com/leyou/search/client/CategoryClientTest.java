@@ -30,5 +30,4 @@ public class CategoryClientTest {
         List<String> names = this.categoryClient.queryNameByIds(ids);
         names.forEach(System.out::println);
     }
-
 }

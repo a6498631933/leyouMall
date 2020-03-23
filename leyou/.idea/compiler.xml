@@ -8,14 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="untitled2" />
         <module name="ly-registry" />
-        <module name="leyou-search" />
+        <module name="ly-item-service" />
         <module name="ly-upload" />
         <module name="ly-gateway" />
         <module name="leyou-test" />
         <module name="ly-item-interface2" />
         <module name="ly-goods-web" />
+        <module name="leyou-search" />
         <module name="untitled" />
-        <module name="ly-item-service" />
         <module name="leyou-common" />
       </profile>
     </annotationProcessing>

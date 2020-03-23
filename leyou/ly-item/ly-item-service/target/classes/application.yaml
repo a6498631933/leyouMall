@@ -10,6 +10,16 @@ spring:
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
+  rabbitmq:
+    host: 192.168.1.177
+    username: /leyou
+    password: 123456
+    virtual-host: /leyou
+    template:
+      exchange: leyou.item.exchange
+    publisher-confirms: true
+
+
 eureka:
   client:
     service-url:

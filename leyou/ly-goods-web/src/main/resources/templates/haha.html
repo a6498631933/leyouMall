@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="itemApp">
+    <h1>{{title}}</h1>
+</div>
+
+<script src="/js/vue/vue.js"></script>
+
+<script>
+    var itemVm = new Vue({
+        el: "#itemApp",
+        data: {
+            title: "标题"
+        },
+    })
+</script>
+</body>
+</html>

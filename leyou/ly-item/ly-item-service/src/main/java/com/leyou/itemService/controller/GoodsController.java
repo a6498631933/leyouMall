@@ -56,6 +56,17 @@ public class GoodsController {
         }
     }
 
+    @PutMapping
+    public ResponseEntity<Void> UpdateGoods(@RequestBody SpuBo spu) {
+        try {
+            this.goodsService.update(spu);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping("/spu/detail/{id}")
     public ResponseEntity<SpuDetail> querySpuDetailById(@PathVariable("id") Long id) {
         SpuDetail detail = this.goodsService.querySpuDetailById(id);

@@ -366,16 +366,32 @@
 
         console.log(goodsParams)
 
-        this.$http.post("/item/goods",goodsParams)
-          .then(() => {
-            // 成功，关闭窗口
-            this.$emit('close');
-            // 提示成功
-            this.$message.success("新增成功了")
-          })
-          .catch(() => {
-            this.$message.error("保存失败！");
-          });
+        if(this.isEdit){
+          this.$http.put("/item/goods",goodsParams)
+            .then(() => {
+              // 成功，关闭窗口
+              this.$emit('close');
+              // 提示成功
+              this.$message.success("保存成功")
+            })
+            .catch(() => {
+              this.$message.error("保存失败！");
+            });
+        }
+        else {
+          this.$http.post("/item/goods",goodsParams)
+            .then(() => {
+              // 成功，关闭窗口
+              this.$emit('close');
+              // 提示成功
+              this.$message.success("新增成功了")
+            })
+            .catch(() => {
+              this.$message.error("保存失败！");
+            });
+        }
+
+
 
       }
     }
