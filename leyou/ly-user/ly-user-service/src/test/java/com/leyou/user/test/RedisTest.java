@@ -1,0 +1,63 @@
+package com.leyou.user.test;
+
+import com.leyou.user.LyUserService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = LyUserService.class)
+public class RedisTest {
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    @Test
+    public void testRedis() {
+        // 存储数据
+        this.redisTemplate.opsForValue().set("key1", "value1");
+        // 获取数据
+        String val = this.redisTemplate.opsForValue().get("key1");
+        System.out.println("val = " + val);
+    }
+
+    @Test
+    public void testRedis2() {
+        // 存储数据，并指定剩余生命时间,60s
+        this.redisTemplate.opsForValue().set("key2", "value2",
+                60, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void testHash(){
+        BoundHashOperations<String, Object, Object> hashOps =
+                this.redisTemplate.boundHashOps("user");
+        // 操作hash数据
+        hashOps.put("name", "jack");
+        hashOps.put("age", "21");
+
+        // 获取单个数据
+        Object name = hashOps.get("name");
+        System.out.println("name = " + name);
+
+        // 获取所有数据
+        Map<Object, Object> map = hashOps.entries();
+        for (Map.Entry<Object, Object> me : map.entrySet()) {
+            System.out.println(me.getKey() + " : " + me.getValue());
+        }
+    }
+
+    @Test
+    public void testRedis4() {
+
+        // 将code存入redis
+        this.redisTemplate.opsForValue().set("user:code:phone:" + "13015958772", "978265", 5, TimeUnit.HOURS);
+    }
+}

@@ -6,17 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="untitled2" />
-        <module name="ly-registry" />
-        <module name="ly-item-service" />
-        <module name="ly-upload" />
-        <module name="ly-gateway" />
-        <module name="leyou-test" />
-        <module name="ly-item-interface2" />
-        <module name="ly-goods-web" />
-        <module name="leyou-search" />
-        <module name="untitled" />
         <module name="leyou-common" />
+        <module name="ly-registry" />
+        <module name="untitled" />
+        <module name="ly-user-service" />
+        <module name="ly-gateway" />
+        <module name="leyou-search" />
+        <module name="ly-goods-web" />
+        <module name="ly-user-interface" />
+        <module name="ly-sms-service" />
+        <module name="ly-upload" />
+        <module name="untitled2" />
+        <module name="ly-item-interface2" />
+        <module name="ly-item-service" />
+        <module name="leyou-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -40,7 +43,11 @@
       <module name="ly-item-interface2" options="-parameters" />
       <module name="ly-item-service" options="-parameters" />
       <module name="ly-registry" options="-parameters" />
+      <module name="ly-sms-service" options="-parameters" />
       <module name="ly-upload" options="-parameters" />
+      <module name="ly-user" options="-parameters" />
+      <module name="ly-user-interface" options="-parameters" />
+      <module name="ly-user-service" options="-parameters" />
       <module name="untitled" options="-parameters" />
       <module name="untitled1" options="-parameters" />
       <module name="untitled2" options="-parameters" />
