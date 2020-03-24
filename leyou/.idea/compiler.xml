@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="leyou-common" />
         <module name="ly-registry" />
+        <module name="ly-auth-service" />
         <module name="untitled" />
         <module name="ly-user-service" />
         <module name="ly-gateway" />
@@ -19,6 +20,7 @@
         <module name="untitled2" />
         <module name="ly-item-interface2" />
         <module name="ly-item-service" />
+        <module name="ly-auth-common" />
         <module name="leyou-test" />
       </profile>
     </annotationProcessing>
@@ -36,6 +38,9 @@
       <module name="leyou-item-interface2" options="-parameters" />
       <module name="leyou-search" options="-parameters" />
       <module name="leyou-test" options="-parameters" />
+      <module name="ly-auth" options="-parameters" />
+      <module name="ly-auth-common" options="-parameters" />
+      <module name="ly-auth-service" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
       <module name="ly-goods-web" options="-parameters" />
       <module name="ly-item" options="-parameters" />

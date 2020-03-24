@@ -18,6 +18,7 @@
         <module>ly-goods-web</module>
         <module>ly-user</module>
         <module>ly-sms-service</module>
+        <module>ly-auth</module>
     </modules>
     <packaging>pom</packaging>
     <name>leyou</name>
