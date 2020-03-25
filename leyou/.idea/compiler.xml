@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="leyou-common" />
+        <module name="ly-cart" />
         <module name="ly-registry" />
         <module name="ly-auth-service" />
         <module name="untitled" />
@@ -41,6 +42,7 @@
       <module name="ly-auth" options="-parameters" />
       <module name="ly-auth-common" options="-parameters" />
       <module name="ly-auth-service" options="-parameters" />
+      <module name="ly-cart" options="-parameters" />
       <module name="ly-gateway" options="-parameters" />
       <module name="ly-goods-web" options="-parameters" />
       <module name="ly-item" options="-parameters" />
